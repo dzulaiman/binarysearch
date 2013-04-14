@@ -274,7 +274,8 @@
               currentP->element = max_nodeP->element;  
              /* have current point to max to free the maximum key node */
              currentP = max_nodeP;                     
-                                                  
+             
+             max_node_parP->right = NULL;                                     
            }
            
            else if ((max_node_parP->right == max_nodeP) && (max_nodeP->left != NULL))
@@ -309,7 +310,7 @@
              currentP = max_nodeP;     
              
              max_node_parP->left = temp_node;
-                
+             max_nodeP == NULL;   
                 }
            
            /*
@@ -336,7 +337,7 @@
           }        
        }
     }
-    free(currentP);  /* deallocate memory of current node */
+    //free(max_nodeP);  /* deallocate memory of current node */
     return deleted;
  }
  
