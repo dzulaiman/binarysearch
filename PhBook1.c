@@ -204,7 +204,7 @@
     
     /* check if user info exists in tree */
     acctP = TreeFind(tree,data.key);
-    PrintElement(&acctP,stdout);
+    PrintElement(*acctP,stdout);
     
     printf("\nPlease enter the name: ");
     scanf("%s",data.value.name);

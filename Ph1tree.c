@@ -178,7 +178,8 @@
     treeNodeT *currentP,       /* pointer to node to be deleted */
               *parentP,        /* pointer to parent of node to be deleted */
               *max_nodeP,      /* pointer to node with largest key */
-              *max_node_parP;  /* pointer to parent of node with largest key */
+              *max_node_parP,  /* pointer to parent of node with largest key */
+              *temp_node;
  
     treeElementT deleted;   /* element that is deleted from the tree */
  
@@ -264,6 +265,54 @@
 
 		/* The deletion code below is not right */
 
+
+        /* Dzul's refine */
+        
+           if ((max_node_parP->right == max_nodeP) && (max_nodeP->left == NULL))
+           {
+              /* swap max node element into deleted node */
+              currentP->element = max_nodeP->element;  
+             /* have current point to max to free the maximum key node */
+             currentP = max_nodeP;                     
+                                                  
+           }
+           
+           else if ((max_node_parP->right == max_nodeP) && (max_nodeP->left != NULL))
+           {
+               temp_node = max_nodeP->left;
+               
+             /* swap max node element into deleted node */
+              currentP->element = max_nodeP->element;  
+             /* have current point to max to free the maximum key node */
+             currentP = max_nodeP;     
+             
+             max_node_parP->right = temp_node;
+             
+           }
+           
+           else if ((max_node_parP->left == max_nodeP) && (max_nodeP->left == NULL))
+           {
+                /* swap max node element into deleted node */
+              currentP->element = max_nodeP->element;  
+             /* have current point to max to free the maximum key node */
+             currentP = max_nodeP;                     
+                                                  
+                }
+                
+           else if ((max_node_parP->left == max_nodeP) && (max_nodeP->left != NULL))
+           {
+              temp_node = max_nodeP->left;
+               
+             /* swap max node element into deleted node */
+              currentP->element = max_nodeP->element;  
+             /* have current point to max to free the maximum key node */
+             currentP = max_nodeP;     
+             
+             max_node_parP->left = temp_node;
+                
+                }
+           
+           /*
              if ((max_nodeP->left == NULL) && (max_nodeP->right == NULL))
              {   
 
@@ -273,7 +322,7 @@
                    max_node_parP->right = NULL;
                 
 		
-		}
+                }
                 else 
                    max_node_parP->left = NULL;
              }               
@@ -281,10 +330,10 @@
                 max_node_parP->right = NULL;
  
              /* swap max node element into deleted node */
-           currentP->element = max_nodeP->element;  
+            /*currentP->element = max_nodeP->element;  */
              /* have current point to max to free the maximum key node */
-             currentP = max_nodeP;   
-          }         
+             /*currentP = max_nodeP;   */
+          }        
        }
     }
     free(currentP);  /* deallocate memory of current node */
