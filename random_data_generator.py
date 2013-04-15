@@ -32,7 +32,7 @@ def random_phone():
     phone = ['1','2','3','4','5','6','7','8','9','0']
     #tel = [1,2]
     tel = ''.join(random.sample(phone,7))
-    return str(tel)
+    return tel
         
 
 if __name__ == "__main__":
@@ -45,21 +45,15 @@ if __name__ == "__main__":
     number = random_int(sample)
     names = random_name(sample)
 
-    print "\n", number
-    print "\n", names
-
     fileout = open("phonebook_rand_100.txt","aw")
+
     for num,name in zip(number,names):
         num = str(num)
-        #fileout.write(num)
-        #fileout.write(" ")
-        #fileout.write(name)
-        #fileout.write(" ")
-        #fileout.write("Hai")
+        name = name.strip("\n")
         phonenum = random_phone()
-        #fileout.write(phonenum)
-        outstring = num + " " + phonenum + " " + name
+        outstring =  num + " " + name + " " + phonenum
         fileout.write(outstring)
+        fileout.write("\n")
     fileout.close()
     print "Output to file: phonebook_rand_100.txt"
     
