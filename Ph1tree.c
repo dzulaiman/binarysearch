@@ -115,7 +115,8 @@
     /* add the new element and exit the function     */
     if (currentP != NULL)
     {
-       currentP->element = element;
+       printf("Serial number already exist");
+       //currentP->element = element;
        return;  /* exit the function */
     }
     
@@ -280,7 +281,7 @@
            
            else if ((max_node_parP->right == max_nodeP) && (max_nodeP->left != NULL))
            {
-               temp_node = max_nodeP->left;
+               temp_node->right = max_nodeP->left;
                
              /* swap max node element into deleted node */
               currentP->element = max_nodeP->element;  
@@ -297,7 +298,7 @@
               currentP->element = max_nodeP->element;  
              /* have current point to max to free the maximum key node */
              currentP = max_nodeP;                     
-                                                  
+             max_node_parP->left = NULL;                                     
                 }
                 
            else if ((max_node_parP->left == max_nodeP) && (max_nodeP->left != NULL))

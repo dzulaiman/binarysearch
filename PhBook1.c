@@ -77,7 +77,10 @@
              printf("Error!! Invalid Selection.\n");
              break;
        }
-  
+       
+        printf("\n\nPress Enter for Main Menu\n");
+        getchar(); getchar();
+        PrintInfoMainMenu();      /* print main menu */
         printf("\nChoice> "); /* prompts for next selection */
         scanf("%s", choice); /* scans in choice */
     }
@@ -124,7 +127,7 @@
     
     /* name of phonebook data file to be opened */
     //char filename[FNAME_MAX+1] = "/home/yaree/phone/phonebook.in";
-    char filename[FNAME_MAX+1] = "phonebook.txt";
+    char filename[FNAME_MAX+1] = "phonebook_10_start6.txt";
     
     FILE *ifp;  /* input file pointer */
     
