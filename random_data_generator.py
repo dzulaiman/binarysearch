@@ -30,9 +30,9 @@ def random_name(sizesamp):
 
 def random_phone():
     phone = ['1','2','3','4','5','6','7','8','9','0']
-    #tel = [1,2]
+    #tel = [0,1] + phone
     tel = ''.join(random.sample(phone,7))
-    return tel
+    return "01" + tel
         
 
 if __name__ == "__main__":
