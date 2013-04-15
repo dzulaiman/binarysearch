@@ -1,7 +1,7 @@
 
 /*
   * File Name: Ph1tree.h
-  * Name: Asmatullah Yaree
+  * Name: Asmatullah Yaree, Mohd Dzul Aiman, Nursuliza, Maryam Adinehnia
   * Assignment: 1
   * Problem: 1
   * Date: March 28, 2013

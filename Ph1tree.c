@@ -1,6 +1,6 @@
 /*
   * File Name: Ph1tree.c
-  * Name: Asmatullah
+  * Name: Asmatullah Yaree, Mohd Dzul Aiman, Nursuliza, Maryam Adinehnia
   * Assignment: 1
   * Problem: 1
   * Date: March April, 2013
