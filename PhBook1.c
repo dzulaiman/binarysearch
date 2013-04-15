@@ -127,7 +127,7 @@
     
     /* name of phonebook data file to be opened */
     //char filename[FNAME_MAX+1] = "/home/yaree/phone/phonebook.in";
-    char filename[FNAME_MAX+1] = "phonebook_10_start6.txt";
+    char filename[FNAME_MAX+1] = "phonebook_50_start24.txt";
     
     FILE *ifp;  /* input file pointer */
     
@@ -345,9 +345,14 @@
   * This procedure prints out the elements of the tree.
   */
  void PrintElement(dataT data, FILE *outfileP)
- {
-    fprintf(outfileP,"Serial Number: %d\n", data.key);
+ {  
+
+    fprintf(outfileP,"|Serial: %d\t", data.key);
+    fprintf(outfileP,"|Name: %s\t", data.value.name);
+    fprintf(outfileP,"|Telephone: %d\t\n", data.value.number);
+    
+    /*fprintf(outfileP,"Serial Number: %d\n", data.key);
     fprintf(outfileP,"User Name: %s\n", data.value.name);
-    fprintf(outfileP,"Telephone Number: %d\n\n", data.value.number);
+    fprintf(outfileP,"Telephone Number: %d\n\n", data.value.number);*/
  }
  

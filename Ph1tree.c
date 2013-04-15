@@ -115,7 +115,7 @@
     /* add the new element and exit the function     */
     if (currentP != NULL)
     {
-       printf("Serial number already exist");
+       printf("\nUnfortunately, serial number already exist. Nothing was add.");
        //currentP->element = element;
        return;  /* exit the function */
     }
