@@ -25,14 +25,15 @@ def random_int(sizesample):
 def random_name(sizesamp):
     namefile = open("100names.txt")
     nameread = namefile.readlines()
-    return random.sample(nameread,sizesamp)
-    
+    name = ''.join(random.sample(nameread,sizesamp))
+    name = name.strip("\n")
+    return name
 
 def random_phone():
     phone = ['1','2','3','4','5','6','7','8','9','0']
     #tel = [0,1] + phone
     tel = ''.join(random.sample(phone,7))
-    return "01" + tel
+    return "601" + tel
         
 
 if __name__ == "__main__":
@@ -43,20 +44,32 @@ if __name__ == "__main__":
     sample = int(sample)
     
     number = random_int(sample)
-    names = random_name(sample)
+    #names = random_name(sample)
 
-    fileout = open("phonebook_rand_100.txt","aw")
-
-    for num,name in zip(number,names):
+    #Changelog in Python 2.7, no mode for 2 words, just a,w or r
+    fileoutname = "phonebook_random_" + sample + ".txt"
+    fileout = open(fileoutname,"a")
+    
+    i = 1
+    for num in number:
+        num = str(num)
+        name = random_name(1)
+        phonenum = random_phone()
+        outstring =  num + " " + name + " " + phonenum
+        print i, outstring
+        fileout.write(outstring)
+        fileout.write("\n")
+        i = i + 1
+        
+    """for num,name in zip(number,names):
         num = str(num)
         name = name.strip("\n")
         phonenum = random_phone()
         outstring =  num + " " + name + " " + phonenum
         fileout.write(outstring)
-        fileout.write("\n")
+        fileout.write("\n")"""
+        
     fileout.close()
-    print "Output to file: phonebook_rand_100.txt"
     
-    
-
+    print "Output to file: " + fileoutname
     
