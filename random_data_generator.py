@@ -40,14 +40,14 @@ if __name__ == "__main__":
 
     print "Generate random sample for node and names\n"
     
-    sample = raw_input("How many samples to generate : ")
-    sample = int(sample)
+    samplecount = raw_input("How many samples to generate : ")
+    sample = int(samplecount)
     
     number = random_int(sample)
     #names = random_name(sample)
 
     #Changelog in Python 2.7, no mode for 2 words, just a,w or r
-    fileoutname = "phonebook_random_" + sample + ".txt"
+    fileoutname = "phonebook_random_"+samplecount+".txt"
     fileout = open(fileoutname,"a")
     
     i = 1
@@ -72,4 +72,3 @@ if __name__ == "__main__":
     fileout.close()
     
     print "Output to file: " + fileoutname
-    
